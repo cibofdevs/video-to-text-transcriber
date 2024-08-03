@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .header {
+    background-color: #333333;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    flex-grow: 1;
+}
+
+#toggleDarkMode {
+    cursor: pointer;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+body.dark-mode #toggleDarkMode {
+    color: #ffffff;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+}
+
+.file-upload label {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.file-upload label:hover {
+    background-color: #45a049;
+}
+
+body.dark-mode .file-upload label {
+    background-color: #333333;
+}
+
+body.dark-mode .file-upload label:hover {
+    background-color: #444444;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode select {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+body.dark-mode button {
+    background-color: #333333;
+}
+
+body.dark-mode button:hover {
+    background-color: #444444;
+}
+
+#transcriptionResult {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    word-wrap: break-word;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100px; /* Ensure enough height for shimmer effect */
+    position: relative;
+}
+
+body.dark-mode #transcriptionResult {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+#transcriptionResult.loading {
+    background: none;
+}
+
+#transcriptionResult.loading::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 5px;
+}
+
+body.dark-mode #transcriptionResult.loading::before {
+    background: linear-gradient(90deg, #2c2c2c 25%, #1c1c1c 50%, #2c2c2c 75%);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 20px;
+    }
+
+    #toggleDarkMode {
+        font-size: 20px;
+    }
+
+    .file-upload label, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

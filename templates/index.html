@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Video to Text Transcriber</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Video to Text Transcriber</h1>
+        <i id="toggleDarkMode" class="fas fa-moon"></i>
+    </div>
+    <div class="main-content">
+        <div class="container">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="file-upload">
+                    <input type="file" id="videoFile" accept="video/*" required>
+                    <label for="videoFile">Choose a file</label>
+                </div>
+                <select id="language">
+                    <option value="en-US">English</option>
+                    <option value="zh-CN">Chinese (Simplified)</option>
+                    <option value="zh-TW">Chinese (Traditional)</option>
+                    <!-- Add other languages as needed -->
+                </select>
+                <button type="submit">Upload and Transcribe</button>
+            </form>
+            <div id="transcriptionResult"></div>
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
